@@ -18,7 +18,6 @@ const start = async () => {
 };
 
 app.get('/', function (req, res) {
-    res.sendStatus(200);
     res.send("<h2>Online Shop<h2>");  
 });
 
