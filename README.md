@@ -7,10 +7,7 @@
 
 ## For launching locally:
 
-'''bash
+```bash
 npm install
-'''
-   
-'''bash
 npm run dev 
-'''
+```
