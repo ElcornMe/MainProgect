@@ -1,0 +1,22 @@
+var app = require('../app');
+const sequelize = require('../database/db');
+var http = require('http');
+
+const port = process.env.PORT || 5000;
+
+
+var server = http.createServer(app);
+app.set('port', port);
+
+const start = async () => {
+    try{
+        await sequelize.authenticate()
+        await sequelize.sync();
+        server.listen(port, () => console.log(`Server started on ${port}`));  
+    } catch (e) {
+        console.log(e.name)
+        console.log(e.message)
+    }
+};
+
+start();
