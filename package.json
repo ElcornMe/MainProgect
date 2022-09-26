@@ -2,6 +2,9 @@
   "name": "online-store",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "18.4.0"
+    },
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
