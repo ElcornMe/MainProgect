@@ -1,0 +1,171 @@
+{
+    "tables": {
+        "Catalogs": {
+            "tableName": "Catalogs",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "title": {
+                    "field": "title",
+                    "seqType": "Sequelize.STRING"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "Orders": {
+            "tableName": "Orders",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "price": {
+                    "field": "price",
+                    "seqType": "Sequelize.STRING"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Users",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "Products": {
+            "tableName": "Products",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "manufacturer": {
+                    "field": "manufacturer",
+                    "seqType": "Sequelize.STRING"
+                },
+                "price": {
+                    "field": "price",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "amount": {
+                    "field": "amount",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "catalogId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Catalogs",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "catalogId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "ProductPerOrders": {
+            "tableName": "ProductPerOrders",
+            "schema": {
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "orderId": {
+                    "primaryKey": true,
+                    "references": {
+                        "model": "Orders",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "orderId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "productId": {
+                    "primaryKey": true,
+                    "references": {
+                        "model": "Products",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "productId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "Users": {
+            "tableName": "Users",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                },
+                "role": {
+                    "field": "role",
+                    "seqType": "Sequelize.STRING"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "path": "C:\\Users\\Denys\\Desktop\\MainProject\\migrations\\_current.json",
+    "backupPath": "C:\\Users\\Denys\\Desktop\\MainProject\\migrations\\_current_bak.json",
+    "exists": true,
+    "revision": 2
+}
