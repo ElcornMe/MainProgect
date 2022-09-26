@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "18.4.0"
+    "node": "18.x"
     },
   "dependencies": {
     "cookie-parser": "^1.4.6",
@@ -21,16 +21,7 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
-    "dbCreate": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:create",
-    "mi": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate",
-    "miUndo": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate:undo",
-    "miCreate": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make -n",
-    "miPrev": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make --preview",
-    "mis": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:seed:all",
-    "misu": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:seed:undo",
-    "firstInit": "npm run dbCreate && npm run mi && npm run misu && npm run mis",
-    "postinstall": "cd ../client && npm i  --legacy-peer-deps"
+    "dev": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
