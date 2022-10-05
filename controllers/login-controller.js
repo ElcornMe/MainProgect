@@ -2,15 +2,15 @@ const models = require('../database/models');
 
 const model = models.User;
 
-const getLogin = (req, res) => {
-  res.render('login');  
+const getLogin = async (req, res) => {
+  await res.render('login');  
 };
 
 const postLogin = async (req, res) => {
   const { email, password } = req.body; 
   let userName = "";
   let userPassword = "";
-  let errorPass = "";
+  let errorLogIn = "";
 
 const checkValidation = await model.findOne({where: {email: email}})
   .then(user=> {
@@ -28,14 +28,14 @@ const checkValidation = await model.findOne({where: {email: email}})
     } 
     })
   .catch(err=>  {
-    errorPass = err.message;
+    errorLogIn = err.message;
     console.log(err.message);
   });
 
   if(checkValidation) {
     res.render('main', {title: 'Online Shop', name: userName});
   }else {
-    res.send(errorPass)
+    res.send(errorLogIn)
   };
 
 };
