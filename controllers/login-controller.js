@@ -35,7 +35,7 @@ const checkValidation = await model.findOne({where: {email: email}})
   if(checkValidation) {
     res.render('main', {title: 'Online Shop', name: userName});
   }else {
-    res.send(errorLogIn)
+    res.render('error', {cap: errorLogIn, userEmail: "Try once more"});
   };
 
 };

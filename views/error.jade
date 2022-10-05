@@ -2,10 +2,9 @@ extends layout
 
 block content
   h1= cap
-  h1= message
-  h2= "This email address:" 
-    h2(style="color:blue") #{userEmail} 
-      h2 #{err} 
-        a(href="/") Logging in!
+  h2= message
+  h2 #{userEmail} 
+    h2 #{err} 
+      a(href="/") Logging in!
 
     
