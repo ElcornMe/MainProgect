@@ -3,7 +3,7 @@ var cookieParser = require('cookie-parser');
 const path = require('path');
 require('dotenv').config();
 
-var loginRouter = require('./routes/login-routes');
+var indexRouter = require('./routes/login-routes');
 var mainRouter = require('./routes/main-routes');
 var catalogRouter = require('./routes/catalog-routes');
 var cartRouter = require('./routes/cart-routes');
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', loginRouter);
+app.use('/', indexRouter);
 app.use('/main', mainRouter);
 app.use('/catalog', catalogRouter);
 app.use('/cart', cartRouter);
