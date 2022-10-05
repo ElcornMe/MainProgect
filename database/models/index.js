@@ -9,7 +9,7 @@ const config = require(__dirname + '/../../database/config/dbConfig.js')[env];
 const db = {};
 
 let sequelize;
-if (config.use_env_variable) {
+if (process.env.NODE_ENV) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
