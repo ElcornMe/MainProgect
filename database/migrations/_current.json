@@ -151,8 +151,8 @@
                     "field": "password",
                     "seqType": "Sequelize.STRING"
                 },
-                "role": {
-                    "field": "role",
+                "city": {
+                    "field": "city",
                     "seqType": "Sequelize.STRING"
                 },
                 "updatedAt": {
@@ -164,8 +164,8 @@
             "indexes": []
         }
     },
-    "path": "C:\\Users\\Denys\\Desktop\\MainProject\\migrations\\_current.json",
-    "backupPath": "C:\\Users\\Denys\\Desktop\\MainProject\\migrations\\_current_bak.json",
+    "path": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current.json",
+    "backupPath": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current_bak.json",
     "exists": true,
-    "revision": 2
+    "revision": 6
 }

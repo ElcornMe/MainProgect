@@ -5,7 +5,7 @@ const def = (db, DataTypes, options) => {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
-      role: DataTypes.STRING
+      city: DataTypes.STRING
     }
   );
 
@@ -14,7 +14,7 @@ const def = (db, DataTypes, options) => {
       foreignKey: "userId",
       as:"user",
       onUpdate: "NO ACTION",
-      onDelete: "CASCADE"
+      onDelete: "CASCADE",
     });
   };
 
