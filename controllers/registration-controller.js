@@ -16,10 +16,10 @@ const postRegistration = async (req, res) => {
     .catch(err=> console.log(err));
 
   if(checkEmail) {
-    res.render('error', {userEmail:`${email}`, err: "Already registered, if it's yours please try"});
+    res.render('error', {cap: "Wrong!",userEmail:`${email}`, err: "Already registered, if it's yours please try"});
   }else {
     model.create({...req.body});
-    res.render('error', {userEmail:`${email}`, err: "Have successfully registered, please proceed to"});
+    res.render('error', {cap: "Congratulations!",userEmail:`${email}`, err: "Have successfully registered, please proceed to"});
   }
 };
 
