@@ -33,7 +33,7 @@ const checkValidation = await model.findOne({where: {email: email}})
   });
 
   if(checkValidation) {
-    res.status(200).render('main', {title: 'Online Shop', name: userName});
+    res.render('main', {title: 'Online Shop', name: userName});
   }else {
     res.send(errorPass)
   };
