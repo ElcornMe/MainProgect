@@ -4,7 +4,7 @@
   "main": "index.js",
   "engines": {
     "node": "18.x"
-    },
+  },
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -21,7 +21,10 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "create-mig": "npx sequelize-mig migration:make --n",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate-undo": "npx sequelize-cli db:migrate:undo"
   },
   "repository": {
     "type": "git",
