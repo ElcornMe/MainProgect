@@ -3,11 +3,11 @@ var cookieParser = require('cookie-parser');
 const path = require('path');
 require('dotenv').config();
 
+var loginRouter = require('./routes/login-routes');
 var mainRouter = require('./routes/main-routes');
 var catalogRouter = require('./routes/catalog-routes');
 var cartRouter = require('./routes/cart-routes');
 var goodsRouter = require('./routes/goods-routes');
-var loginRouter = require('./routes/login-routes');
 var registrationRouter = require('./routes/registration-routes');
 
 const app = express();
@@ -19,11 +19,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use('/', loginRouter);
 app.use('/main', mainRouter);
 app.use('/catalog', catalogRouter);
 app.use('/cart', cartRouter);
 app.use('/goods', goodsRouter);
-app.use('/', loginRouter);
 app.use('/registration', registrationRouter);
 
 
