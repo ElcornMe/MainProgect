@@ -1,7 +1,7 @@
-const getController = (req, res) => {
+const getCatalog = (req, res) => {
   res.render('catalog');  
 }
 
 module.exports = {
-  getController 
+  getCatalog
 };

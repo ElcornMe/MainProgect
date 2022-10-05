@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var { getController } = require('../controllers/catalog-controller')
+var { getCatalog } = require('../controllers/catalog-controller')
 
-router.get('/', getController);
+router.get('/', getCatalog);
 
 module.exports = router;
