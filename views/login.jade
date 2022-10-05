@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div 
+  h3 If you don't nave an account follow this page : 
+    a(href="/registration") Registration
+    form(action="/", method="post") 
+      p Email :
+      input(type="email", name="email", pattern= "\\@.+\\..+" placeholder="Must be including \"@\"") 
+      p Password :
+      input(type="password", name="password",minlength = 8, maxlength = 18 required placeholder="Not less then 8 symbols") 
+      p
+      button(id='sendReq',type='submit', method='post') Press
+    p
+  
