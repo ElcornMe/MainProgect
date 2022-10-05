@@ -16,6 +16,7 @@ const dev = {
   logging: (msg) => {
     // console.log(msg);
   },
+  use_env_variable: "" ,
   define: { createdAt: false },
 };
 
