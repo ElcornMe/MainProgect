@@ -2,5 +2,11 @@ extend layout
 
 block content
   h1 Catalog   
-  h3 Choose the category you are interested in!  
+  h3 Choose the category you are interested in! 
+  - var values = raw;
+  ul
+    each val in raw
+      h3
+        a(href="/goods")
+          li= val
   a(href="/main") &#11013; back to main page
