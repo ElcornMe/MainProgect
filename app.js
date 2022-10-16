@@ -25,8 +25,10 @@ function auth (req, res, next) {
 
     if(!req.cookies.userId) {
         res.render('error', {cap: "Authorize is failing , please Re-Log in:"});
-    };
-    next()
+    }else{
+        next()
+    }
+    
 
  };
 
