@@ -4,18 +4,15 @@ const model = models.Catalog;
 
 
 const addCatalog = (req, res) => {
-  
   model.create({
       title: req.body.title
     }).then(res=>{
       console.log(res);
     }).catch(err=>console.log(err));
-
-  };
+};
 
 
 const getCatalog = (req, res) => {
-
   model.findAll({raw:true})
   .then((catalog) => {
     let arrOfCatalogs = [];
@@ -25,7 +22,6 @@ const getCatalog = (req, res) => {
     }
 
     res.render('catalog', {raw: arrOfCatalogs}); 
-    
   })
 };
 
