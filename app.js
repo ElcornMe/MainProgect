@@ -33,10 +33,11 @@ function decoder (req, res, next) {
           req.cookies = decoded;
           next();
         } else {
-          res.status(401).send({
-            isAuth: false,
-            err: { message: err.message, code: err.code },
-          });
+          res.render('error', {cap: "Authorize is failing , please Re-Log in:"});
+          // res.status(401).send({
+          //   isAuth: false,
+          //   err: { message: err.message, code: err.code },
+          // });
         }
       }
     );
