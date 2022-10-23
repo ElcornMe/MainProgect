@@ -1,5 +1,31 @@
 {
     "tables": {
+        "Authorizations": {
+            "tableName": "Authorizations",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "token": {
+                    "field": "token",
+                    "seqType": "Sequelize.STRING"
+                },
+                "userId": {
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
         "Catalogs": {
             "tableName": "Catalogs",
             "schema": {
@@ -64,6 +90,10 @@
                     "autoIncrement": true,
                     "field": "id",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
                 },
                 "manufacturer": {
                     "field": "manufacturer",
@@ -167,5 +197,5 @@
     "path": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current.json",
     "backupPath": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current_bak.json",
     "exists": true,
-    "revision": 6
+    "revision": 9
 }
