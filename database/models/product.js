@@ -2,6 +2,7 @@ const def = (db, DataTypes, options) => {
   const model = db.define(
     "Product",
     {
+      name: DataTypes.STRING,
       manufacturer: DataTypes.STRING,
       price: DataTypes.INTEGER,
       amount: DataTypes.INTEGER

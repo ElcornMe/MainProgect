@@ -11,8 +11,8 @@ const postRegistration = async (req, res) => {
   
   const checkEmail = await model.findOne({where:{email: email}, raw: true })
   .then(user=> {
-      if(user) return true
-    })
+    if(user) return true
+  })
   .catch(err=> console.log(err));
 
   if(checkEmail) {
