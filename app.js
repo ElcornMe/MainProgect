@@ -10,6 +10,7 @@ var catalogRouter = require('./routes/catalog-routes');
 var cartRouter = require('./routes/cart-routes');
 var goodsRouter = require('./routes/goods-routes');
 var registrationRouter = require('./routes/registration-routes');
+var accountRouter = require('./routes/account-routes');
 
 const app = express();
 
@@ -22,10 +23,11 @@ app.use(cookieParser());
 
 app.use('/registration', registrationRouter);
 app.use('/', indexRouter);
-app.use(decoderAndAuth);
+app.use('/goods', goodsRouter);
 app.use('/main', mainRouter);
 app.use('/catalog', catalogRouter);
+app.use(decoderAndAuth);
 app.use('/cart', cartRouter);
-app.use('/goods', goodsRouter);
+app.use('/account', accountRouter);
 
 module.exports = app;
