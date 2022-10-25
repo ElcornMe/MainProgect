@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1= `${name}, Welcome to ${title}`
-  h1= `Your location set in ${city}`
+  h1= `Welcome to ${title}`
   h2
     tr 
       td 
@@ -13,8 +12,11 @@ block content
           a(href='/goods') Goods
       td  
           a(href='/cart') Cart
+    tr
       td  
           a(href='/', style='color:green') Login
+      td 
+          a(href='/account', style='color:blue') Account
   h3 Welcome to #{title}
   
     
