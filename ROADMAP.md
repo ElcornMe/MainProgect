@@ -27,7 +27,7 @@
 - [ ] Update database and affected tables.
 - [ ] Middleware.
 - [ ] Update README.md and .env.template (project environment).
-- [ ] Deadline: YOU_SET_THIS_DATE
+- [ ] Deadline: 02.11.2022
 
 Database:
 - Table: User
