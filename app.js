@@ -1,7 +1,9 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-const decoderAndAuth = require('./middleware/mid_decoderAndAuth')
+const decodeToken = require('./middleware/decodeToken');
+const permit = require('./middleware/checkRole');
+const checkAuth = require('./middleware/checkAuth')
 require('dotenv').config();
 
 var indexRouter = require('./routes/login-routes');
@@ -21,12 +23,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use('/registration', registrationRouter);
 app.use('/', indexRouter);
+app.use(decodeToken);
 app.use('/goods', goodsRouter);
 app.use('/main', mainRouter);
-app.use('/catalog', catalogRouter);
-app.use(decoderAndAuth);
+app.use('/catalog', permit(4, 1), catalogRouter);
+app.use(checkAuth);
 app.use('/cart', cartRouter);
 app.use('/account', accountRouter);
 
