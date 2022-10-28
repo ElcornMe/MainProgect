@@ -14,6 +14,10 @@
                     "field": "token",
                     "seqType": "Sequelize.STRING"
                 },
+                "userId": {
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "updatedAt": {
                     "allowNull": false,
                     "field": "updatedAt",
@@ -181,6 +185,11 @@
                     "field": "city",
                     "seqType": "Sequelize.STRING"
                 },
+                "role": {
+                    "field": "role",
+                    "seqType": "Sequelize.INTEGER",
+                    "defaultValue": 0
+                },
                 "updatedAt": {
                     "allowNull": false,
                     "field": "updatedAt",
@@ -193,5 +202,5 @@
     "path": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current.json",
     "backupPath": "C:\\Users\\Denys\\Desktop\\MainProject\\database\\migrations\\_current_bak.json",
     "exists": true,
-    "revision": 8
+    "revision": 10
 }

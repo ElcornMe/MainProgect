@@ -5,7 +5,11 @@ const def = (db, DataTypes, options) => {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
-      city: DataTypes.STRING
+      city: DataTypes.STRING,
+      role: { 
+        type: DataTypes.INTEGER,
+        defaultValue: 0
+      }
     }
   );
 
