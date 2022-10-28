@@ -21,15 +21,25 @@ const postLogin = async (req, res) => {
   if(!checkUser.errorLogIn) {
     let token = jwt.sign(
       { userId: checkUser.userId,
-        salt: randomString(8)},
-        process.env.SECRET_KEY
+        salt: randomString(8),
+        role: checkUser.userRole,
+        email: email
+      },
+        process.env.SECRET_KEY,
+      { expiresIn: "1h" }
     );
     
     // FUNCTION: CREATE OR UPDATE TOKEN IN DATABASE
     await checkColumnInTable(checkUser.userId, token)
 
     res.cookie('userId', token, {httpOnly: true});
-    res.render('main', {title: 'Online Shop', name: checkUser.userName, city: checkUser.userCity});
+    res.render('account', {
+      title: 'Online Shop', 
+      name: checkUser.userName, 
+      city: checkUser.userCity, 
+      email: email, 
+      password: checkUser.userPassword 
+    });
   }else {
     res.render('error', {cap: checkUser.errorLogIn, userEmail: "Try once more"});
   };
