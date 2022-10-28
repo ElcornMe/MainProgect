@@ -11,3 +11,7 @@
 npm install
 npm run dev 
 ```
+
+## Before lauch :
+
+```
