@@ -8,6 +8,7 @@ async function Validation(email, pass) {
   let errorLogIn;
   let userCity;
   let userId;
+  let userRole;
 
 const checkValidation = await User.findOne({where: {email: email}})
   .then(user=> {
@@ -16,6 +17,7 @@ const checkValidation = await User.findOne({where: {email: email}})
       userCity = user.city;
       userName = user.name;
       userPassword = user.password;
+      userRole = user.role;
     }else {
       throw new Error("Wrong email")
     };
@@ -35,7 +37,7 @@ const checkValidation = await User.findOne({where: {email: email}})
   if(checkValidation) {
     return { errorLogIn }
   }else{
-    return { userId, userCity, userName, userPassword }
+    return { userId, userCity, userName, userPassword, userRole }
   }
 }
 
