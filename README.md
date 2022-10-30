@@ -8,19 +8,20 @@
 ## For launching locally:
 
 ```bash
-npm install
-npm run dev 
+- npm install
+- npm run dev 
 ```
 
-## If you use localy ,before launch :
+## If you use locally:
 
 ```
-change file name from ".env.template" to ".env"  
-change values of global variables inside ".env" file 
+- create ".env" file, transfer variables from ".env.template"
+- write the values of global variables inside the ".env" file for connection database
+and SECRET_KEY for JWT token 
 ```
 
-## If you use in deploy ,before launch :
+## If you use in deploy:
 
 ```
-create variables which in ".env.template" on your deploy service
+- create environment variables listed in ".env.template" on your deploy service
 ```
