@@ -11,3 +11,16 @@
 npm install
 npm run dev 
 ```
+
+## If you use localy ,before launch :
+
+```
+change file name from ".env.template" to ".env"  
+change values of global variables inside ".env" file 
+```
+
+## If you use in deploy ,before launch :
+
+```
+create variables which in ".env.template" on your deploy service
+```

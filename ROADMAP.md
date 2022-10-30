@@ -24,8 +24,8 @@
 ### Tasks
 
 #### 25/10/2022. Roles and Access.
-- [ ] Update database and affected tables.
-- [ ] Middleware.
+- [x] Update database and affected tables.
+- [x] Middleware.
 - [ ] Update README.md and .env.template (project environment).
 - [ ] Deadline: 02.11.2022
 
