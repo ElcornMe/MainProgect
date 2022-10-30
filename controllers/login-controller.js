@@ -21,9 +21,7 @@ const postLogin = async (req, res) => {
   if(!checkUser.errorLogIn) {
     let token = jwt.sign(
       { userId: checkUser.userId,
-        salt: randomString(8),
-        role: checkUser.userRole,
-        email: email
+        salt: randomString(8)
       },
         process.env.SECRET_KEY,
       { expiresIn: "1h" }
