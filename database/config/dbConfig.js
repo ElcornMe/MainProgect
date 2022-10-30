@@ -1,4 +1,4 @@
-require("dotenv").config();
+require('dotenv').config();
 
 const dev = {
   username: process.env.DB_USER,
@@ -8,10 +8,10 @@ const dev = {
   port: process.env.DB_PORT,
   dialect: 'postgres',
   dialectOptions: {
-      ssl: {
-          require: true,
-          rejectUnauthorized: false
-      }
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
   },
   logging: (msg) => {
     // console.log(msg);

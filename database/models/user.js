@@ -1,24 +1,24 @@
 const def = (db, DataTypes, options) => {
   const model = db.define(
-    "User",
+    'User',
     {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.STRING,
       city: DataTypes.STRING,
-      role: { 
+      role: {
         type: DataTypes.INTEGER,
-        defaultValue: 0
-      }
-    }
+        defaultValue: 0,
+      },
+    },
   );
 
   model.associate = (models) => {
-    model.hasMany(models.Order, { 
-      foreignKey: "userId",
-      as:"user",
-      onUpdate: "NO ACTION",
-      onDelete: "CASCADE",
+    model.hasMany(models.Order, {
+      foreignKey: 'userId',
+      as: 'user',
+      onUpdate: 'NO ACTION',
+      onDelete: 'CASCADE',
     });
   };
 

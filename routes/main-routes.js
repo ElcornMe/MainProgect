@@ -1,6 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var { getMain } = require('../controllers/main-controller')
+const express = require('express');
+
+const router = express.Router();
+const { getMain } = require('../controllers/main-controller');
 
 router.get('/', getMain);
 

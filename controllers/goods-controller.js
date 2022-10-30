@@ -1,12 +1,9 @@
 const models = require('../database/models');
 
-
 const getGoods = (req, res) => {
-
-  res.render('goods'); 
-
+  res.render('goods');
 };
 
 module.exports = {
-  getGoods
+  getGoods,
 };

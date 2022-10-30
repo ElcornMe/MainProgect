@@ -9,23 +9,20 @@ const model = models.User;
 // 4. Admin
 
 function permit(...permittedRoles) {
-  
   return async (req, res, next) => {
-
-    const user = await model.findOne({where: {id: req.cookies.userId}})
-    .then(user => {
-      if (permittedRoles.includes(user.role)) {
-      next(); 
-      } else {
-      res.status(403).json({message: "Forbidden"}); 
-      }
-    })
-    .catch(err => {
-      console.log(err);
-      res.render('error', {cap: "Authorize is failing , please Re-Log in:"});
-    })
-  }
+    await model.findOne({ where: { id: req.cookies.userId } })
+      .then((user) => {
+        if (permittedRoles.includes(user.role)) {
+          next();
+        } else {
+          res.status(403).json({ message: 'Forbidden' });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        res.render('error', { cap: 'Authorize is failing , please Re-Log in:' });
+      });
+  };
 }
-
 
 module.exports = permit;

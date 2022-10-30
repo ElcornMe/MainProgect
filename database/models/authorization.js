@@ -1,10 +1,10 @@
 const def = (db, DataTypes, options) => {
   const model = db.define(
-    "Authorization",
+    'Authorization',
     {
       token: DataTypes.STRING,
-      userId: DataTypes.INTEGER
-    }
+      userId: DataTypes.INTEGER,
+    },
   );
 
   return model;

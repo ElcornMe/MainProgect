@@ -1,6 +1,6 @@
 const models = require('../database/models');
 
-const User = models.User;
+const { User } = models;
 
 async function Validation(email, pass) {
   let userName;
@@ -10,36 +10,36 @@ async function Validation(email, pass) {
   let userId;
   let userRole;
 
-const checkValidation = await User.findOne({where: {email: email}})
-  .then(user=> {
-    if(user) {
-      userId = user.id;
-      userCity = user.city;
-      userName = user.name;
-      userPassword = user.password;
-      userRole = user.role;
-    }else {
-      throw new Error("Wrong email")
-    };
+  const checkValidation = await User.findOne({ where: { email } })
+    .then((user) => {
+      if (user) {
+        userId = user.id;
+        userCity = user.city;
+        userName = user.name;
+        userPassword = user.password;
+        userRole = user.role;
+      } else {
+        throw new Error('Wrong email');
+      }
 
-    if(userPassword == pass) {
-      console.log("password is correct")
-    }else {
-      throw new Error("Wrong password");
-    }
+      if (userPassword == pass) {
+        console.log('password is correct');
+      } else {
+        throw new Error('Wrong password');
+      }
     })
-  .catch(err=>  {
-    console.log(err)
-    errorLogIn = err.message;
-    return errorLogIn
-  });
-  
-  if(checkValidation) {
-    return { errorLogIn }
-  }else{
-    return { userId, userCity, userName, userPassword, userRole }
+    .catch((err) => {
+      console.log(err);
+      errorLogIn = err.message;
+      return errorLogIn;
+    });
+
+  if (checkValidation) {
+    return { errorLogIn };
   }
+  return {
+    userId, userCity, userName, userPassword, userRole,
+  };
 }
 
-  
 module.exports = Validation;
