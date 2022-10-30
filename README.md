@@ -12,7 +12,7 @@
 - npm run dev 
 ```
 
-## If you use localy:
+## If you use locally:
 
 ```
 - create ".env" file, transfer variables from ".env.template"
