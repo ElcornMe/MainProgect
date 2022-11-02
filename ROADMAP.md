@@ -9,14 +9,14 @@
 - Authentication as COOKIE Session and TOKEN Based access
 
 ### 2. Development Tools & Practice
-- Tests
-- Postman
-- Git & Gitflow
-- Linter & Formatters
+- [ ] Tests (e2e, unit, integration)
+- [ ] Postman
+- [ ] Git & Gitflow
+- [x] Linter & Formatters
 - Changelog
-- Task management
-- Heroku (Digital Ocean)
-- README.md
+- [x] Task management
+- [ ] Heroku (Digital Ocean)
+- [x] README.md
 
 
 ## Details
@@ -43,3 +43,23 @@ Roles list:
 Middleware:
 - Read express.js middlewares.
 - Route will use access.
+
+#### 02/10/2022. Git & Postman.
+- [ ] (gitflow) Make branch development.
+- [ ] (gitflow) Make bracnh feature/postman.
+- [ ] (postman) Postman collection for auth.
+- [ ] (postman) Attach postman collection to branch feature/postman.
+- [ ] Deadline: ??/11/2022 
+
+```
+Master
+|-> Dev
+    |-> Feature
+   
+Master
+|-> Dev
+    |<- Feature
+
+Master
+|<- Dev
+```
