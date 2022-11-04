@@ -40,6 +40,7 @@ const postLogin = async (req, res) => {
       password: checkUser.userPassword,
     });
   } else {
+    res.status(401);
     res.render('error', { cap: checkUser.errorLogIn, userEmail: 'Try once more' });
   }
 };
