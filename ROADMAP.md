@@ -45,11 +45,11 @@ Middleware:
 - Route will use access.
 
 #### 02/10/2022. Git & Postman.
-- [ ] (gitflow) Make branch development.
-- [ ] (gitflow) Make bracnh feature/postman.
-- [ ] (postman) Postman collection for auth.
-- [ ] (postman) Attach postman collection to branch feature/postman.
-- [ ] Deadline: ??/11/2022 
+- [x] (gitflow) Make branch development.
+- [x] (gitflow) Make bracnh feature/postman.
+- [x] (postman) Postman collection for auth.
+- [x] (postman) Attach postman collection to branch feature/postman.
+- [ ] Deadline: 07/11/2022 
 
 ```
 Master
