@@ -10,8 +10,8 @@
 
 ### 2. Development Tools & Practice
 - [ ] Tests (e2e, unit, integration)
-- [ ] Postman
-- [ ] Git & Gitflow
+- [x] Postman
+- [x] Git & Gitflow
 - [x] Linter & Formatters
 - Changelog
 - [x] Task management
@@ -44,12 +44,12 @@ Middleware:
 - Read express.js middlewares.
 - Route will use access.
 
-#### 02/10/2022. Git & Postman.
+#### 02/11/2022. Git & Postman.
 - [x] (gitflow) Make branch development.
 - [x] (gitflow) Make bracnh feature/postman.
 - [x] (postman) Postman collection for auth.
 - [x] (postman) Attach postman collection to branch feature/postman.
-- [ ] Deadline: 07/11/2022 
+- [x] Deadline: 07/11/2022 
 
 ```
 Master
@@ -63,3 +63,10 @@ Master
 Master
 |<- Dev
 ```
+
+#### 10/11/2022
+- [ ] API for Product, Catalog
+- [ ] API for Users and Roles
+- [ ] Update Postman API Collection
+- [ ] Create feature branch
+- [ ] Deadline: ??/11/2022
