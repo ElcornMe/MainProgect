@@ -2,14 +2,22 @@ const models = require('../database/models');
 
 const model = models.Catalog;
 
-const addCatalog = (req, res) => {
-  model.create({
-    title: req.body.title,
-  }).then((res) => {
-    console.log(res);
-  }).catch((err) => console.log(err));
+// POST METHOD
+const addCatalog = async (req, res) => {
+  await model.findOne({ where: { title: req.body.title } })
+    .then((catalog) => {
+      if (!catalog) {
+        model.create({
+          title: req.body.title,
+        }).then(() => res.status(200).json({ massage: 'Successful' }));
+      } else {
+        throw new Error('Already created');
+      }
+    })
+    .catch((err) => res.status(400).json({ massage: `${err}` }));
 };
 
+// GET METHOD
 const getCatalog = (req, res) => {
   model.findAll({ raw: true })
     .then((catalog) => {
@@ -23,7 +31,23 @@ const getCatalog = (req, res) => {
     });
 };
 
+// DELETE METHOD
+const deleteCatalog = (req, res) => {
+  model.destroy({
+    where: {
+      title: req.body.title,
+    },
+  }).then((result) => {
+    if (result !== 0) {
+      res.status(200).json({ massage: `Successful deleted : ${result} product` });
+    } else {
+      throw new Error('Not found');
+    }
+  }).catch((err) => res.status(400).json({ massage: `${err}` }));
+};
+
 module.exports = {
   getCatalog,
   addCatalog,
+  deleteCatalog,
 };

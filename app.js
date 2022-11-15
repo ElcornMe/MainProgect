@@ -28,9 +28,9 @@ app.use('/', indexRouter);
 app.use(decodeToken);
 app.use('/goods', goodsRouter);
 app.use('/main', mainRouter);
-app.use('/catalog', permit(4, 1), catalogRouter);
+app.use('/catalog', catalogRouter);
 app.use(checkAuth);
-app.use('/cart', cartRouter);
+app.use('/cart', permit(4, 0), cartRouter);
 app.use('/account', accountRouter);
 
 module.exports = app;

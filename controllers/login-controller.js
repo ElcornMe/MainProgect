@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+const models = require('../database/models');
 const Validation = require('../helpers/checkValidation');
 const checkColumnInTable = require('../helpers/checkColumnTable');
 const randomString = require('../helpers/randomString');
@@ -45,7 +46,31 @@ const postLogin = async (req, res) => {
   }
 };
 
+// DELETE METHOD
+const deleteUser = (req, res) => {
+  models.User.destroy({ where: { email: req.body.email } })
+    .then((result) => {
+      if (result !== 0) {
+        res.status(200).json({ massage: `Successful deleted : ${result} user` });
+      } else {
+        throw new Error('Not found');
+      }
+    }).catch((err) => res.status(400).json({ massage: `${err}` }));
+};
+
+// UPDATE METHOD
+const updateUser = (req, res) => {
+  models.User.update({ role: req.body.role }, { where: { email: req.body.email } })
+    .then((result) => {
+      if (result[0] === 0) throw new Error('Not found');
+      res.status(200).json({ massage: 'Successful' });
+    })
+    .catch((err) => res.status(400).json({ massage: `${err}` }));
+};
+
 module.exports = {
   getLogin,
   postLogin,
+  deleteUser,
+  updateUser,
 };
