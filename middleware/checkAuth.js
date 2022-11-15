@@ -12,6 +12,7 @@ async function checkAuth(req, res, next) {
     })
     .catch((err) => {
       console.log(err);
+      res.status(401);
       res.render('error', { cap: 'Authorize is failing , please Re-Log in:' });
     });
 }

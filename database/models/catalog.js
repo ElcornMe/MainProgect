@@ -1,17 +1,17 @@
 const def = (db, DataTypes, options) => {
   const model = db.define(
-    "Catalog",
+    'Catalog',
     {
-      title: DataTypes.STRING
-    }
+      title: DataTypes.STRING,
+    },
   );
 
   model.associate = (models) => {
     model.hasMany(models.Product, {
-      foreignKey: "catalogId",
-      as: "catalog",
-      onUpdate: "NO ACTION",
-      onDelete: "CASCADE"
+      foreignKey: 'catalogId',
+      as: 'catalog',
+      onUpdate: 'NO ACTION',
+      onDelete: 'CASCADE',
     });
   };
 
