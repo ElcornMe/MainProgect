@@ -69,4 +69,4 @@ Master
 - [ ] API for Users and Roles
 - [ ] Update Postman API Collection
 - [ ] Create feature branch
-- [ ] Deadline: ??/11/2022
+- [ ] Deadline: 17/11/2022
