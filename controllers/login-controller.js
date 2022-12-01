@@ -1,10 +1,9 @@
-const jwt = require('jsonwebtoken');
+const tokenCreator = require('../helpers/jwtCreator');
 require('dotenv').config();
 
 const models = require('../database/models');
 const Validation = require('../helpers/checkValidation');
 const checkColumnInTable = require('../helpers/checkColumnTable');
-const randomString = require('../helpers/randomString');
 
 // GET METHOD
 const getLogin = async (req, res) => {
@@ -20,14 +19,8 @@ const postLogin = async (req, res) => {
 
   // CREATE TOKEN WITH SALT
   if (!checkUser.errorLogIn) {
-    const token = jwt.sign(
-      {
-        userId: checkUser.userId,
-        salt: randomString(8),
-      },
-      process.env.SECRET_KEY,
-      { expiresIn: '1h' },
-    );
+  // FUNCTION FOR CREATE JWT TOKEN
+    const token = tokenCreator(checkUser.userId);
 
     // FUNCTION: CREATE OR UPDATE TOKEN IN DATABASE
     await checkColumnInTable(checkUser.userId, token);
