@@ -10,13 +10,19 @@ async function checkColumnInTable(userId, token) {
           where:
         { userId },
         })
-          .then((res) => console.log('updated token'));
+          .then(() => {
+            console.log('updated token');
+            return true;
+          });
       } else {
         Authorization.create({
           token,
           userId,
         })
-          .then((res) => console.log('created new token'));
+          .then(() => {
+            console.log('created new token');
+            return true;
+          });
       }
     })
     .catch((err) => { console.log(err); });

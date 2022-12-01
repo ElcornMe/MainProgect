@@ -1,4 +1,4 @@
-const def = (db, DataTypes, options) => {
+const def = (db, DataTypes) => {
   const model = db.define(
     'Authorization',
     {

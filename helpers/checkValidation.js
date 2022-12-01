@@ -22,7 +22,7 @@ async function Validation(email, pass) {
         throw new Error('Wrong email');
       }
 
-      if (userPassword == pass) {
+      if (userPassword === pass) {
         console.log('password is correct');
       } else {
         throw new Error('Wrong password');
